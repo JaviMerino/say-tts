@@ -2,8 +2,15 @@
 
 # TODO receive as parameter
 MODEL=en_GB-alan-medium
-# TODO Guess from the model name: low = 16000, medium = 22050
-AUDIO_RATE=22050
+
+if [[ $MODEL =~ -medium$ ]]; then
+    AUDIO_RATE=22050
+elif [[ $MODEL =~ -low$ ]]; then
+    AUDIO_RATE=16000
+else
+    echo "Error: Invalid model name \"$MODEL\". It should end in \"-medium\" or \"-low\""
+    exit 1
+fi
 
 # According to piper-tts, the model is downloaded automatically if not
 # found, but it doesn't seem to work.  Look for it in the data folder.
