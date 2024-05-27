@@ -36,3 +36,12 @@ cat README.txt | say
 ``` bash
 say -m es_ES-sharvard-medium "Hola, esto es una prueba"
 ```
+
+Motivation
+----------
+
+There are probably dozens of projects like this.  I like piper, I want
+a handy command in the shell to read text and I don't want to remember
+all the different parameters to piper or sox.  This scratches my
+particular itch. It's very simple because the magic is done by
+piper mainly.
