@@ -1,8 +1,8 @@
-{ piper-tts
-, sox
-, writeShellApplication
+{
+  piper-tts,
+  sox,
+  writeShellApplication,
 }:
-
 writeShellApplication {
   name = "say";
   runtimeInputs = [

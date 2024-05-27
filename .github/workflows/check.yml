@@ -13,5 +13,9 @@ jobs:
         with:
           extra_nix_config: |
             experimental-features = nix-command flakes
+      - name: check shell script format
+        run:  nix run nixpkgs#shellcheck -- say
+      - name: check nix files format
+        run:  nix run nixpkgs#alejandra -- flake.nix default.nix
       - name: check README format
         run:  nix run nixpkgs#mdl -- README.md
