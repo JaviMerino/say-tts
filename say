@@ -23,4 +23,8 @@ if [[ ! -f "$MODELFILE" || ! -f "${MODELFILE}.json" ]]; then
    exit 1
 fi
 
-echo "$@" | piper -m "$MODELFILE" --output_raw | aplay -r "$AUDIO_RATE" -f S16_LE -t raw -
+if (( $# == 0 )); then
+    cat -
+else
+    echo "$@"
+fi | piper -m "$MODELFILE" --output_raw | aplay -r "$AUDIO_RATE" -f S16_LE -t raw -
