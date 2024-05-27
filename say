@@ -4,9 +4,16 @@
 MODEL=en_GB-alan-medium
 # TODO Guess from the model name: low = 16000, medium = 22050
 AUDIO_RATE=22050
-# According to piper, the model is downloaded automatically, but it
-#doesn't seem to work.  Assume it is in the data folder for now.
+
+# According to piper-tts, the model is downloaded automatically if not
+# found, but it doesn't seem to work.  Look for it in the data folder.
 SAY_DATA_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/say-tts"
 MODELFILE="$SAY_DATA_DIR/${MODEL}.onnx"
+
+if [[ ! -f "$MODELFILE" || ! -f "${MODELFILE}.json" ]]; then
+   echo >&2 "Error: Either \"$MODELFILE\" or \"${MODELFILE}.json\" do not exist"
+   echo >&2 "Download models from https://github.com/rhasspy/piper/blob/master/VOICES.md"
+   exit 1
+fi
 
 echo "$@" | piper -m "$MODELFILE" --output_raw | aplay -r "$AUDIO_RATE" -f S16_LE -t raw -
