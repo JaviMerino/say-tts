@@ -3,7 +3,7 @@ Say - a TTS CLI tool
 
 `say` is a simple command-line tool for converting text to speech
 (TTS) using [piper-tts](https://github.com/rhasspy/piper) and the
-[sox](https://sox.sourceforge.net/) audio player.
+aplay audio player from [alsa-utils](https://www.alsa-project.org/).
 
 Setup
 -----
@@ -43,6 +43,6 @@ Motivation
 
 There are probably dozens of projects like this.  I like piper, I want
 a handy command in the shell to read text and I don't want to remember
-all the different parameters to piper or sox.  This scratches my
-particular itch. It's very simple because the magic is done by
-piper mainly.
+all the different parameters to piper or aplay.  This scratches my
+particular itch. It's very simple because the magic is done by piper
+mainly.

@@ -1,13 +1,13 @@
 {
+  alsa-utils,
   piper-tts,
-  sox,
   writeShellApplication,
 }:
 writeShellApplication {
   name = "say";
   runtimeInputs = [
+    alsa-utils
     piper-tts
-    sox
   ];
   text = builtins.readFile ./say;
 }
