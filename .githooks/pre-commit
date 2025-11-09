@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+# Called by "git commit" with no arguments.  The hook should
+# exit with non-zero status after issuing an appropriate message if
+# it wants to stop the commit.
+
+set -eu
+
+# Check format
+nix run nixpkgs#mdl -- README.md
+nix run nixpkgs#shellcheck -- say
+nix run nixpkgs#alejandra -- -c flake.nix default.nix
