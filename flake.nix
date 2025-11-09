@@ -31,5 +31,7 @@
       overlays.default = final: prev: {
         say = self.packages.${prev.stdenv.hostPlatform.system}.default;
       };
+
+      homeManagerModules.default = import ./modules/home-manager.nix;
     };
 }
