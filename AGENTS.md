@@ -40,9 +40,9 @@ Check shell script with shellcheck:
 nix run nixpkgs#shellcheck -- say
 ```
 
-Check Nix files formatting with alejandra:
+Check Nix files formatting with nixfmt:
 ```bash
-nix run nixpkgs#alejandra -- -c flake.nix default.nix
+nix run nixpkgs#nixfmt -- --check flake.nix default.nix
 ```
 
 Check README markdown with mdl:

@@ -9,4 +9,4 @@ set -eu
 # Check format
 nix run nixpkgs#mdl -- README.md
 nix run nixpkgs#shellcheck -- say
-nix run nixpkgs#alejandra -- -c flake.nix default.nix
+nix run nixpkgs#nixfmt -- --check flake.nix default.nix
