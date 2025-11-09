@@ -37,17 +37,17 @@ The CI workflow (`.github/workflows/check.yml`) runs three checks:
 
 Check shell script with shellcheck:
 ```bash
-nix run nixpkgs#shellcheck -- say
+nix develop -c shellcheck say
 ```
 
 Check Nix files formatting with nixfmt:
 ```bash
-nix run nixpkgs#nixfmt -- --check flake.nix default.nix
+nix develop -c nixfmt --check flake.nix default.nix
 ```
 
 Check README markdown with mdl:
 ```bash
-nix run nixpkgs#mdl -- README.md
+nix develop -c mdl README.md
 ```
 
 ## Model Configuration

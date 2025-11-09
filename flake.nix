@@ -17,6 +17,14 @@
           say = pkgs.callPackage ./. { };
           default = say;
         };
+
+        devShells.default = pkgs.mkShell {
+          buildInputs = with pkgs; [
+            shellcheck
+            nixfmt-rfc-style
+            mdl
+          ];
+        };
       }
     ))
     // {
