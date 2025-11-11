@@ -30,9 +30,21 @@ Usage
 say "Hello, this is a test"
 ```
 
+Useful for proofreading a document, as sometimes listening helps you
+catch issues that you may miss when reading the same text silently for the tenth
+time:
+
 ``` bash
-cat README.txt | say
+say < README.txt
 ```
+
+Or piping from other commands:
+
+``` bash
+llm "Why is the sky blue?" | say
+```
+
+You can use `-m` to change model or language:
 
 ``` bash
 say -m es_ES-sharvard-medium "Hola, esto es una prueba"
