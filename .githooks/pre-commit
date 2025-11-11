@@ -10,3 +10,6 @@ set -eu
 nix develop -c mdl README.md
 nix develop -c shellcheck say
 nix develop -c nixfmt --check flake.nix default.nix
+
+# Run flake checks
+nix flake check

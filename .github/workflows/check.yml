@@ -19,3 +19,5 @@ jobs:
         run:  nix develop -c nixfmt --check flake.nix default.nix
       - name: check README format
         run:  nix develop -c mdl README.md
+      - name: run flake checks
+        run:  nix flake check

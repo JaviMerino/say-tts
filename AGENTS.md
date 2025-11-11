@@ -33,7 +33,7 @@ nix run . -- "Hi, this is a test message"
 
 ## Linting and Formatting
 
-The CI workflow (`.github/workflows/check.yml`) runs three checks:
+The CI workflow (`.github/workflows/check.yml`) and pre-commit hook (`.githooks/pre-commit`) run the following checks:
 
 Check shell script with shellcheck:
 ```bash
@@ -48,6 +48,11 @@ nix develop -c nixfmt --check flake.nix default.nix
 Check README markdown with mdl:
 ```bash
 nix develop -c mdl README.md
+```
+
+Run flake checks:
+```bash
+nix flake check
 ```
 
 ## Model Configuration
